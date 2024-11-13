@@ -1,0 +1,131 @@
+/* Ensure the Metal font is applied to buttons and any .metal-regular text */
+.button, .metal-regular {
+  font-family: 'Metal', serif;
+  font-weight: 400;
+  font-size: 24px !important;
+  font-style: normal;
+}
+
+/* Global styles: remove margin, padding and set full height for body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+/* Ensure the video is always full screen and behind everything */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Button container */
+.button-container {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px; /* Adds space between buttons */
+}
+
+/* Global styles for buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #000;
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 24px !important; /* Default font size for desktop */
+}
+
+/* Button sizes for large screens */
+.button-large {
+  padding: 8px 16px;
+}
+
+/* Button hover and focus states */
+.button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.button:focus {
+  outline: 2px solid #0056b3;
+}
+
+/* ----- Mobile Styles ----- */
+
+/* For small screens (up to 600px), adjust button size and padding */
+@media (max-width: 600px) {
+  .button {
+    font-size: 18px; /* Smaller font size for mobile */
+    padding: 6px 12px; /* Smaller padding for better fit */
+    margin: 5px; /* Reduced margin */
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Reduce space between buttons */
+  }
+}
+
+
+
+/* Styling for the platform icons */
+.platform-logo {
+  font-size: 40px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.platform-logo:hover {
+  transform: scale(1.2);
+  color: #f0f0f0;
+}
+
+.social-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.second-row {
+  top: 65%;
+}
+
+@media (max-width: 600px) {
+  .social-btn-container {
+    padding: 6px 12px; /* Smaller padding for better fit */
+    margin-top: 30px; /* Reduced margin */
+  }
+
